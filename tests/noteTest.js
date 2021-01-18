@@ -5,7 +5,7 @@
         if(note.text !== "test") {
             throw new Error("text should be equal to 'test'");
         } else {
-            console.log("Test passed. Test create new note")
+            console.log("Test passed. It creates a new note")
         }
     };
 testCreateNewNote();
