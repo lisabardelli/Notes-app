@@ -1,6 +1,5 @@
 class Note {
-constructor() {
+  constructor() {
     this.text = "test"
-}
-
+  }
 }
