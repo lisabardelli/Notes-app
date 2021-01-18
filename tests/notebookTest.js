@@ -26,3 +26,19 @@ testCreateNewNotebookHasEntriesProperty();
   }
   testAddNewNoteToNotebook();
 })();
+
+(function() {
+  var notebook;
+  var note;
+  function testViewNotes() {
+    notebook = new Notebook();
+    note = new Note();
+    notebook.addEntry(note);
+    if (!notebook.viewEntries() === notebook.entries) {
+      throw new Error(`This method should return ${notebook.entries.text}`);
+    } else {
+      console.log("Test passed: viewNotes returns note in entries");
+    }
+  }
+  testViewNotes();
+}());
