@@ -19,3 +19,21 @@ As a programmer
 I can use shortcodes like `:fire:` that get converted into emojis like 🔥
 So I can record notes with fun little pictures
 ```
+
+-------------------------------------------------------------
+Welcome To Your Notebook!
+
+--------------
+|            |
+|            |
+--------------
+            Post Note
+
+Your Notes:
+- Note 1 (max 20chars)
+- Note 2
+
+
+-------------------------------------------------------------
+
+
