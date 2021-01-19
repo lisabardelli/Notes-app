@@ -22,7 +22,7 @@ So I can record notes with fun little pictures
 
 -------------------------------------------------------------
 Welcome To Your Notebook!
-
+Create a new Note below:
 --------------
 |            |
 |            |

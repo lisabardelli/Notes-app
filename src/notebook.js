@@ -5,6 +5,7 @@ class Notebook {
   }
 
   addEntry(note) {
+    note = document.getElementById("textbox").value;
     this.entries.push(note);
   }
 

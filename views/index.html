@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 </head>
+
 <body>
   <h1>Welcome To Your Notebook!</h1>
   <h2>Create a new note below:</h2>
-  <input type='text' id='textbox' placeholder="Start typing...">
-  <input type='button' onclick = "addEntry()" value ='Create Note'>Create Note<
-  <input type='button' onclick = "viewEntries()" value ='View Notes'>View Notes<
+  <input type='text' id="textbox" placeholder="Start typing...">
+  <input type='button' onclick="addEntry()" value ='Create Note'>
+  <input type='button' onclick="viewEntries()" value ='View Notes'>
  <h2>View Your Exising Notes:</h2>
- <ul>
-  <!-- var result = this.entries.map(myFunction);
-  function myFunction(entry, index, array) {
-  return entry.text; -->
- </ul>
+ <h3 id="demo"> </h3>
+
+ 
 
  <script>
- var note 
- var entries = []
- document.getElementById("textbox").innerHTML = note;
-
+  var entries = ["note", "note_2", "note_3"]
  function addEntry(note) {
-   this.entries.push(note);
- }
+    note = document.getElementById("textbox").value;
+    entries.push(note);
+    console.log(entries)
+  }
 
- function viewEntries() {
-   console.log(this.entries);
- }
- </script>
+  var txt = "";
+  entries.forEach(viewEntries);
+  document.getElementById("demo").innerHTML = txt;
 
-
-
-
-
-
-
+  function viewEntries(value, index, array) {
+    txt = txt + value + "<br>"; 
+  }
 
 
+</script>
+
+
+
+ <script type="text/javascript" src="../src/note.js"></script>
+ <script type="text/javascript" src="../src/notebook.js"></script>
 </body>
 
 </html>
 
 </body>
-<script src="src/note.js"></script>
-<script src="src/notebook.js"></script>
-<!-- <script src='interface.js'></script> -->
+
 </html>
