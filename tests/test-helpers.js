@@ -5,7 +5,22 @@ var assert = {
       }
     }
   };
+// ---------------------------
+// New testing Framework
 
+  function describe(labelClass, callback) {
+    callback();
+  }
+
+  function beforeEach(callback) {
+    callback();
+  }
+
+  function it(label, callback) {
+    console.log(`Test: ${label}`)
+    callback()
+  }
+  
   function expect(a) {
     return {
       toEqual: function(b) {
@@ -13,16 +28,14 @@ var assert = {
           console.log("Pass")
         } else {
           console.log("Fail")
+        } 
+      },
+      toThrowError: function(c) {
+        try {
+         a()
+        } catch (err) {
+        return c
         }
       }
     }
-  }
-
-  function it(label, callback) {
-    console.log(`Test: ${label}`)
-    callback()
-  }
-
-  function beforeEach(callback) {
-    callback();
   }
