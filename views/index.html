@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <h1>Welcome To Your Notebook!</h1>
+  <h2>Create a new note below:</h2>
+  <input type='text' id='textbox' placeholder="Start typing...">
+  <input type='button' onclick = "addEntry()" value ='Create Note'>Create Note<
+  <input type='button' onclick = "viewEntries()" value ='View Notes'>View Notes<
+ <h2>View Your Exising Notes:</h2>
+ <ul>
+  <!-- var result = this.entries.map(myFunction);
+  function myFunction(entry, index, array) {
+  return entry.text; -->
+ </ul>
+
+ <script>
+ var note 
+ var entries = []
+ document.getElementById("textbox").innerHTML = note;
+
+ function addEntry(note) {
+   this.entries.push(note);
+ }
+
+ function viewEntries() {
+   console.log(this.entries);
+ }
+ </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+</body>
+<script src="src/note.js"></script>
+<script src="src/notebook.js"></script>
+<!-- <script src='interface.js'></script> -->
+</html>

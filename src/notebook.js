@@ -10,8 +10,10 @@ class Notebook {
 
   viewEntries() {
     return this.entries;
+    console.log(this.entries);
   }
 }
+
 
 
 
