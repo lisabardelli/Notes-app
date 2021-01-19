@@ -1,7 +1,10 @@
+import { exportPractice } from '../../export_practice/method_to_export.js';
+
 (function() {
     var notebook;
     function testCreateNewNotebookHasEntriesProperty() {
         notebook = new Notebook();
+        console.log("exportPractice()");
         assert.isTrue(notebook.entries.length === 0, "#testCreateNewNotebookHasEntriesProperty()");
     };
 testCreateNewNotebookHasEntriesProperty();
