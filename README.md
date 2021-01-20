@@ -20,6 +20,20 @@ I can use shortcodes like `:fire:` that get converted into emojis like 🔥
 So I can record notes with fun little pictures
 ```
 
+Welcome To Your Notebook!
+Create a new Note below:
+--------------
+|            |
+|            |
+--------------
+            Post Note
+
+Your Notes:
+- Note 1 (max 20chars)
+- Note 2
+
+
+=======
 ##How to use the app
 1. Clone this repo to your local computer
 
@@ -33,3 +47,4 @@ So I can record notes with fun little pictures
 ```
 3. !!! The above script tag must be above the script tags for the test files
 4. To run the tests, open the index.html file in your web browser and open the console to view test results.
+

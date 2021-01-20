@@ -1,10 +1,10 @@
 class Notebook {
-
   constructor() {
     this.entries = []
   }
 
   addEntry(note) {
+    note = document.getElementById("textbox").value;
     if(note.text = "") {
       throw new Error("Text cannot be empty")
     }
@@ -13,8 +13,12 @@ class Notebook {
 
   viewEntries() {
     return this.entries;
+    console.log(this.entries);
   }
 }
+
+
+
 
 
 // var result = this.entries.map(myFunction);
