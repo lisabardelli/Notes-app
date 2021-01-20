@@ -1,11 +1,13 @@
 class Notebook {
-
   constructor() {
     this.entries = []
   }
 
   addEntry(note) {
     note = document.getElementById("textbox").value;
+    if(note.text = "") {
+      throw new Error("Text cannot be empty")
+    }
     this.entries.push(note);
   }
 
