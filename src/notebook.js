@@ -5,6 +5,9 @@ class Notebook {
   }
 
   addEntry(note) {
+    if(note.text = "") {
+      throw new Error("Text cannot be empty")
+    }
     this.entries.push(note);
   }
 
@@ -12,8 +15,6 @@ class Notebook {
     return this.entries;
   }
 }
-
-
 
 
 // var result = this.entries.map(myFunction);
