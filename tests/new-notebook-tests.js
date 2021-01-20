@@ -1,4 +1,4 @@
-// import { exportPractice } from '../../export_practice/method_to_export.js';
+
 var notebook;
 
 describe("#Notebook", function(){
@@ -9,7 +9,6 @@ describe("#Notebook", function(){
   })
 
   it("notebook initialises with empty entries array", function(){
-    console.log(exportPractice());
     expect(notebook.entries.length).toEqual(0)
   })
 

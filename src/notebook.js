@@ -4,7 +4,7 @@ class Notebook {
   }
 
   addEntry(note) {
-    note = document.getElementById("textbox").value;
+    // note = document.getElementById("textbox").value;
     if(note.text = "") {
       throw new Error("Text cannot be empty")
     }
