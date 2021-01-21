@@ -17,6 +17,8 @@ button.addEventListener("click", function() {
         notes.innerHTML = ""
         entries.forEach(function(note) {
             entriesDiv.appendChild(note.elementForDisplay())
+            let noteDiv = document.getElementById(note.id)
+            noteDiv.insertAdjacentHTML("afterend", "<br>")
         });
     }
 
