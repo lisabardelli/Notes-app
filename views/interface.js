@@ -31,7 +31,7 @@ button.addEventListener("click", function() {
     };
 
     function showNoteForCurrentPage() {
-      console.log(accessTheHash(window.location))
+      hideContent()
       showNote(accessTheHash(window.location));
     };
 
@@ -51,9 +51,13 @@ button.addEventListener("click", function() {
       };
 
     function showNote(id) {
-      console.log(entries)
       document.getElementById('full-note-text').innerHTML = `<p> ${entries[id].text} </p><br>`
     };
+
+    function hideContent() {
+        var hidden = document.getElementById("main-body")
+        hidden.style.display = "none";
+    }
 
 
     // access the hash number
