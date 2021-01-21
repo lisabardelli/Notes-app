@@ -12,6 +12,17 @@ button.addEventListener("click", function() {
     viewEntries()
     })
 
+let backButton = document.getElementById('back-button')
+backButton.addEventListener("click", function() {
+    history.replaceState(null, null, " ");
+
+    var hidden = document.querySelector('#main-body');
+    hidden.style.display = (status !== 'open') ? 'block' : 'none';
+
+    document.getElementById('full-note-text').innerHTML = ""
+})
+
+
     function viewEntries() {
         let entriesDiv = document.getElementById("notes")
         notes.innerHTML = ""
@@ -57,11 +68,11 @@ button.addEventListener("click", function() {
     function hideContent() {
         var hidden = document.getElementById("main-body")
         hidden.style.display = "none";
-    }
+    };
 
 
-    // access the hash number
-    //access the array at the index number which corresponds with hash number
+
+    // access the array at the index number which corresponds with hash number
     // get the full text of that note
     // show this using an HTML element
 
