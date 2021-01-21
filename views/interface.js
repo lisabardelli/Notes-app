@@ -20,6 +20,23 @@ backButton.addEventListener("click", function() {
     hideBackButton()
 })
 
+// function getPostData(text) {
+//   fetch("https://makers-emojify.herokuapp.com/", {
+//     method: 'POST',
+//     body: text,
+//     headers: { "Content-Type: application/json" }
+//   }).then(response => {
+//     response.json().then(post => {
+//       console.log(response.json())
+//     // ...to here.
+//   //   let rendered = renderPost(post);
+//   //   document.getElementById("main").innerHTML = rendered;
+//     })
+//   })
+// }
+//
+// getPostData()
+
   function displayMainBody() {
     var hidden = document.querySelector('#main-body');
     hidden.style.display = (status !== 'open') ? 'block' : 'none';
