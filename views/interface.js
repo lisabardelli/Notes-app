@@ -15,13 +15,20 @@ button.addEventListener("click", function() {
 let backButton = document.getElementById('back-button')
 backButton.addEventListener("click", function() {
     history.replaceState(null, null, " ");
-
-    var hidden = document.querySelector('#main-body');
-    hidden.style.display = (status !== 'open') ? 'block' : 'none';
-
-    document.getElementById('full-note-text').innerHTML = ""
+    displayMainBody();
+    document.getElementById('full-note-text').innerHTML = "";
+    hideBackButton()
 })
 
+  function displayMainBody() {
+    var hidden = document.querySelector('#main-body');
+    hidden.style.display = (status !== 'open') ? 'block' : 'none';
+  }
+
+  function hideBackButton() {
+    var homeButton = document.getElementById('back-button')
+    homeButton.style.display = (status === 'open') ? 'block' : 'none';
+  }
 
     function viewEntries() {
         let entriesDiv = document.getElementById("notes")
@@ -44,21 +51,16 @@ backButton.addEventListener("click", function() {
     function showNoteForCurrentPage() {
       hideContent()
       showNote(accessTheHash(window.location));
+      displayBackButton();
     };
 
-
-    // function accessTheHash(location) {
-    //   return location.hash.split('#')[1];
-    // }
+    function displayBackButton() {
+      var homeButton = document.getElementById('back-button')
+      homeButton.style.display = (status !== 'open') ? 'block' : 'none';
+    }
 
     function accessTheHash(location) {
       return location.hash.split("#")[1]
-        // let notes = entries
-        // for( var i in notes) {
-        //   if (id == notes[i].id) {
-        //     return notes[i].text
-        //   }
-        // }
       };
 
     function showNote(id) {
