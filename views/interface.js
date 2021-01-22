@@ -12,6 +12,7 @@ button.addEventListener("click", function() {
     viewEntries()
     })
 
+
 let backButton = document.getElementById('back-button')
 backButton.addEventListener("click", function() {
     history.replaceState(null, null, " ");
@@ -37,6 +38,27 @@ backButton.addEventListener("click", function() {
 //
 // getPostData()
 
+function getPostData(text) {
+  fetch('https://makers-emojify.herokuapp.com/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      text: text
+    })
+  })
+  .then(res => {
+    console.log(res)
+    return res.json()
+  })
+  .then(data => {
+    console.log(data)
+    // document.getElementById("notes").insertAdjacentHTML('afterend', `<p>${data.emojified_text}</p>`);
+    return data.emojified_text
+  })
+}
+
   function displayMainBody() {
     var hidden = document.querySelector('#main-body');
     hidden.style.display = (status !== 'open') ? 'block' : 'none';
@@ -53,9 +75,19 @@ backButton.addEventListener("click", function() {
         entries.forEach(function(note) {
             entriesDiv.appendChild(note.elementForDisplay())
             let noteDiv = document.getElementById(note.id)
+            // for getPostData(note.text) {
+            //
+            // }
+            console.log(noteDiv)
+            let answer = getPostData(':earth_africa:')
+            console.log(answer)
+            noteDiv.textContent = getPostData(':earth_africa:')
             noteDiv.insertAdjacentHTML("afterend", "<br>")
+            // document.getElementById('notes').innerHTML = `<p> ${data.emojified_text} </p><br>`
         });
     }
+
+    getPostData(':earth_africa:')
 
 
 
