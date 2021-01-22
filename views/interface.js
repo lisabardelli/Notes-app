@@ -1,6 +1,6 @@
 // document.getElementById("textbox").innerHTML = txt
 let entries = []
-var string;
+var stringText;
 
 let button = document.getElementById('create-button')
 button.addEventListener("click", function() {
@@ -39,13 +39,14 @@ backButton.addEventListener("click", function() {
       let entriesDiv = document.getElementById("notes")
       notes.innerHTML = ""
       entries.forEach(function(note) {
-          entriesDiv.appendChild(note.elementForDisplay())
-          let noteDiv = document.getElementById(note.id)
-          noteDiv.insertAdjacentHTML("afterend", "<br>")
+          getPostData(`${note.text}`, `${note.id}`)
+          let noteDiv = document.getElementById(`${note.id}`)
+          console.log(noteDiv)
+          // noteDiv.insertAdjacentHTML("afterend", "<br>")
         });
   }
 
-  function getPostData(text) {
+  function getPostData(text, id) {
     fetch('https://makers-emojify.herokuapp.com/', {
       method: 'POST',
       headers: {
@@ -56,36 +57,14 @@ backButton.addEventListener("click", function() {
       })
     })
     .then(res => {
-      // console.log(res)
       return res.json()
     })
     .then(data => {
-      // console.log(data)
-      // document.getElementById("notes").insertAdjacentHTML('afterend', `<p>${data.emojified_text}</p>`);
-     return data.emojified_text
+      document.getElementById("notes").insertAdjacentHTML('beforeend', `<a href="#${id}" id="${id}">${data.emojified_text}</a><br>`);
     })
   }
 
-  // function emojifyText() {
-  //   let listDiv = document.querySelector("#notes")
-  //   console.log(listDiv)
-  //   console.log('above should be the listDiv')
-  //   // save entire div as variable
-  //   let divContent = listDiv.innerHTML
-  //   console.log(divContent)
-  //   console.log('above should be the divContent')
-  //   // clear the div
-  //   listDiv.textContent = ""
-  //   console.log(listDiv)
-  //   console.log('above should be an empty string printed')
-  //   // shove the variable through the getEMoji method
-  //   let newContent = getPostData(divContent)
-  //   console.log(getPostData(divContent))
-  //   console.log(newContent)
-  //   console.log('above should be the entire new div with emojis')
-  //   // re-insert the output of getEMoji method
-  //   listDiv.innerHTML = newContent
-  // }
+
 
     makeUrlChangeShowNoteForCurrentPage();
 
