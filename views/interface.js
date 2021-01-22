@@ -1,5 +1,6 @@
 // document.getElementById("textbox").innerHTML = txt
 let entries = []
+var string;
 
 let button = document.getElementById('create-button')
 button.addEventListener("click", function() {
@@ -21,43 +22,7 @@ backButton.addEventListener("click", function() {
     hideBackButton()
 })
 
-// function getPostData(text) {
-//   fetch("https://makers-emojify.herokuapp.com/", {
-//     method: 'POST',
-//     body: text,
-//     headers: { "Content-Type: application/json" }
-//   }).then(response => {
-//     response.json().then(post => {
-//       console.log(response.json())
-//     // ...to here.
-//   //   let rendered = renderPost(post);
-//   //   document.getElementById("main").innerHTML = rendered;
-//     })
-//   })
-// }
-//
-// getPostData()
 
-function getPostData(text) {
-  fetch('https://makers-emojify.herokuapp.com/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      text: text
-    })
-  })
-  .then(res => {
-    console.log(res)
-    return res.json()
-  })
-  .then(data => {
-    console.log(data)
-    // document.getElementById("notes").insertAdjacentHTML('afterend', `<p>${data.emojified_text}</p>`);
-    return data.emojified_text
-  })
-}
 
   function displayMainBody() {
     var hidden = document.querySelector('#main-body');
@@ -74,21 +39,53 @@ function getPostData(text) {
         notes.innerHTML = ""
         entries.forEach(function(note) {
             entriesDiv.appendChild(note.elementForDisplay())
+            
             let noteDiv = document.getElementById(note.id)
             // for getPostData(note.text) {
-            //
             // }
             console.log(noteDiv)
-            let answer = getPostData(':earth_africa:')
-            console.log(answer)
-            noteDiv.textContent = getPostData(':earth_africa:')
+
+            console.log("Below getpostdata")
+            console.log(getPostData(note.text))
+            console.log('note.text')
+            console.log(note.text)
+            let value = getPostData(note.text)
+            console.log('value')
+            console.log(value)
+            noteDiv.innerHTML = string 
             noteDiv.insertAdjacentHTML("afterend", "<br>")
             // document.getElementById('notes').innerHTML = `<p> ${data.emojified_text} </p><br>`
-        });
+            // document.getElementById('notes').innerHTML = `<p> ${string} </p><br>`
+
+          });
     }
 
-    getPostData(':earth_africa:')
+    // getPostData(note.text)
 
+    function getPostData(text) {
+      fetch('https://makers-emojify.herokuapp.com/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          text: text
+        })
+      })
+      .then(res => {
+        console.log(res)
+        return res.json()
+      })
+      .then(data => {
+        console.log(data)
+        // document.getElementById("notes").insertAdjacentHTML('afterend', `<p>${data.emojified_text}</p>`);
+       string = data.emojified_text
+       console.log('string')
+       console.log(string)
+       return string
+      })
+    }
+    
 
 
     makeUrlChangeShowNoteForCurrentPage();
