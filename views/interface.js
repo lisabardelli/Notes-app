@@ -11,6 +11,7 @@ button.addEventListener("click", function() {
     entries.push(note)
     note.assignId(entries.indexOf(note))
     viewEntries()
+    // emojifyText()
     })
 
 
@@ -34,59 +35,57 @@ backButton.addEventListener("click", function() {
     homeButton.style.display = (status === 'open') ? 'block' : 'none';
   }
 
-    function viewEntries() {
-        let entriesDiv = document.getElementById("notes")
-        notes.innerHTML = ""
-        entries.forEach(function(note) {
-            entriesDiv.appendChild(note.elementForDisplay())
-            
-            let noteDiv = document.getElementById(note.id)
-            // for getPostData(note.text) {
-            // }
-            console.log(noteDiv)
+  function viewEntries() {
+      let entriesDiv = document.getElementById("notes")
+      notes.innerHTML = ""
+      entries.forEach(function(note) {
+          entriesDiv.appendChild(note.elementForDisplay())
+          let noteDiv = document.getElementById(note.id)
+          noteDiv.insertAdjacentHTML("afterend", "<br>")
+        });
+  }
 
-            console.log("Below getpostdata")
-            console.log(getPostData(note.text))
-            console.log('note.text')
-            console.log(note.text)
-            let value = getPostData(note.text)
-            console.log('value')
-            console.log(value)
-            noteDiv.innerHTML = string 
-            noteDiv.insertAdjacentHTML("afterend", "<br>")
-            // document.getElementById('notes').innerHTML = `<p> ${data.emojified_text} </p><br>`
-            // document.getElementById('notes').innerHTML = `<p> ${string} </p><br>`
-
-          });
-    }
-
-    // getPostData(note.text)
-
-    function getPostData(text) {
-      fetch('https://makers-emojify.herokuapp.com/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          text: text
-        })
+  function getPostData(text) {
+    fetch('https://makers-emojify.herokuapp.com/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        text: text
       })
-      .then(res => {
-        console.log(res)
-        return res.json()
-      })
-      .then(data => {
-        console.log(data)
-        // document.getElementById("notes").insertAdjacentHTML('afterend', `<p>${data.emojified_text}</p>`);
-       string = data.emojified_text
-       console.log('string')
-       console.log(string)
-       return string
-      })
-    }
-    
+    })
+    .then(res => {
+      // console.log(res)
+      return res.json()
+    })
+    .then(data => {
+      // console.log(data)
+      // document.getElementById("notes").insertAdjacentHTML('afterend', `<p>${data.emojified_text}</p>`);
+     return data.emojified_text
+    })
+  }
 
+  // function emojifyText() {
+  //   let listDiv = document.querySelector("#notes")
+  //   console.log(listDiv)
+  //   console.log('above should be the listDiv')
+  //   // save entire div as variable
+  //   let divContent = listDiv.innerHTML
+  //   console.log(divContent)
+  //   console.log('above should be the divContent')
+  //   // clear the div
+  //   listDiv.textContent = ""
+  //   console.log(listDiv)
+  //   console.log('above should be an empty string printed')
+  //   // shove the variable through the getEMoji method
+  //   let newContent = getPostData(divContent)
+  //   console.log(getPostData(divContent))
+  //   console.log(newContent)
+  //   console.log('above should be the entire new div with emojis')
+  //   // re-insert the output of getEMoji method
+  //   listDiv.innerHTML = newContent
+  // }
 
     makeUrlChangeShowNoteForCurrentPage();
 
