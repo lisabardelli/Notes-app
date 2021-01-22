@@ -60,7 +60,7 @@ backButton.addEventListener("click", function() {
       return res.json()
     })
     .then(data => {
-      document.getElementById("notes").insertAdjacentHTML('beforeend', `<a href="#${id}" id="${id}">${data.emojified_text}</a><br>`);
+      document.getElementById("notes").insertAdjacentHTML('afterbegin', `<a href="#${id}" id="${id}">${data.emojified_text}</a><br>`);
     })
   }
 
@@ -88,8 +88,27 @@ backButton.addEventListener("click", function() {
       };
 
     function showNote(id) {
+      // getPostDataTwo(`${entries[id].text}`, id)
       document.getElementById('full-note-text').innerHTML = `<p> ${entries[id].text} </p><br>`
     };
+
+    // function getPostDataTwo(text, id) {
+    //   fetch('https://makers-emojify.herokuapp.com/', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //       text: text
+    //     })
+    //   })
+    //   .then(res => {
+    //     return res.json()
+    //   })
+    //   .then(data => {
+    //     document.getElementById("full-note-text").insertAdjacentHTML('afterbegin', `<p>${data.emojified_text}</p>`);
+    //   })
+    // }
 
     function hideContent() {
         var hidden = document.getElementById("main-body")
