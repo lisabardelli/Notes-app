@@ -1,5 +1,9 @@
 # Notes-app
-A frontend single-page app using only pure Javascript
+A frontend single-page app where users can make notes. 
+
+This has been built using only pure Javascript.
+
+## User stories ##
 
 ```
 As a programmer
@@ -20,31 +24,36 @@ I can use shortcodes like `:fire:` that get converted into emojis like 🔥
 So I can record notes with fun little pictures
 ```
 
-Welcome To Your Notebook!
-Create a new Note below:
---------------
-|            |
-|            |
---------------
-            Post Note
 
-Your Notes:
-- Note 1 (max 20chars)
-- Note 2
+## How to use the app ##
 
-
-=======
-##How to use the app
 1. Clone this repo to your local computer
 
+```
+git clone https://github.com/lisabardelli/Notes-app.git
 
-#How to use the testing Framework
+```
+
+Move to the repo
+
+```
+cd  Notes-app
+
+```
+
+
+## How to use the testing Framework ##
 1. Please clone the [testing framework](https://github.com/calavell/team_clic_testing_framework) into the same parent directory as the main repository
+
+
+```
+git clone ttps://github.com/calavell/team_clic_testing_framework
+```
 2. In the index.html file, add the following code:
 
 ```
 <script src="path_from_current_file_to_testing-framework.js"></script>
 ```
-3. !!! The above script tag must be above the script tags for the test files
+3. Please note the above script tag must be above the script tags for the test files
 4. To run the tests, open the index.html file in your web browser and open the console to view test results.
 

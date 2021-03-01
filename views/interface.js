@@ -1,4 +1,4 @@
-// document.getElementById("textbox").innerHTML = txt
+
 let entries = []
 var stringText;
 
@@ -11,7 +11,7 @@ button.addEventListener("click", function() {
     entries.push(note)
     note.assignId(entries.indexOf(note))
     viewEntries()
-    // emojifyText()
+
     })
 
 
@@ -88,6 +88,7 @@ backButton.addEventListener("click", function() {
       };
 
     function showNote(id) {
+      
       document.getElementById('full-note-text').innerHTML = `<p> ${entries[id].text} </p><br>`
     };
 
@@ -97,12 +98,3 @@ backButton.addEventListener("click", function() {
     };
 
 
-
-    // access the array at the index number which corresponds with hash number
-    // get the full text of that note
-    // show this using an HTML element
-
-
-    // when the hash changes (after a note is clicked)
-    // we see the full text of an individual note on its own page
-    // then there needs to be a button that takes you to the original page
