@@ -62,9 +62,9 @@ git clone ttps://github.com/calavell/team_clic_testing_framework
 3. Please note the above script tag must be above the script tags for the test files
 4. To run the tests, open the index.html file in your web browser and open the console to view test results.
 
-## **Add a note **
+## Add a note
 ![Add a note](add_note.png)
-## **Add a note **
+## View all notes
 ![See notes](See_notes.png)
-## **Add a note **
+## Click on single note
 ![Single note](Single_note.png)
