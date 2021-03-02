@@ -1,7 +1,7 @@
 # Notes-app
 A frontend single-page app where users can make notes. 
 
-This has been built using only pure Javascript.
+This has been built using only Vanilla Javascript.
 
 ## User stories ##
 
@@ -41,8 +41,13 @@ cd  Notes-app
 
 ```
 
+Run locally
+```
+open ./views/index.html 
+```
 
-## How to use the testing Framework ##
+
+## How to use the Testing Framework ##
 1. Please clone the [testing framework](https://github.com/calavell/team_clic_testing_framework) into the same parent directory as the main repository
 
 
@@ -57,3 +62,9 @@ git clone ttps://github.com/calavell/team_clic_testing_framework
 3. Please note the above script tag must be above the script tags for the test files
 4. To run the tests, open the index.html file in your web browser and open the console to view test results.
 
+## **Add a note **
+![Add a note](add_note.png)
+## **Add a note **
+![See notes](See_notes.png)
+## **Add a note **
+![Single note](Single_note.png)
