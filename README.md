@@ -30,7 +30,7 @@ So I can record notes with fun little pictures
 1. Clone this repo to your local computer
 
 ```
-git clone https://github.com/lisabardelli/Notes-app.git
+git clone https://github.com/lisabardelli/notes_app.git
 
 ```
 
