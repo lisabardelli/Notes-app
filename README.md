@@ -37,7 +37,7 @@ git clone https://github.com/lisabardelli/notes_app.git
 Move to the repo
 
 ```
-cd  Notes-app
+cd  notes_app
 
 ```
 
