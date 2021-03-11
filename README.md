@@ -52,7 +52,7 @@ open ./views/index.html
 
 
 ```
-git clone ttps://github.com/calavell/team_clic_testing_framework
+git clone https://github.com/lisabardelli/team_clic_testing_framework.git
 ```
 2. In the index.html file, add the following code:
 
