@@ -48,7 +48,7 @@ open ./views/index.html
 
 
 ## How to use the Testing Framework ##
-1. Please clone the [testing framework](https://github.com/calavell/team_clic_testing_framework) into the same parent directory as the main repository
+1. Please clone the [testing framework](https://github.com/lisabardelli/team_clic_testing_framework.git) into the same parent directory as the main repository
 
 
 ```
